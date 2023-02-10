@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.xfiles.example01.application.AppConstants
 import com.xfiles.example01.data.model.Movie
 import com.xfiles.example01.ui.theme.Example01Theme
 import com.xfiles.example01.ui.views.MovieViewModel
@@ -35,6 +36,7 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalLifecycleComposeApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppConstants.CACHE_DIR = cacheDir
         setContent {
             Example01Theme {
                 Surface(modifier = Modifier.fillMaxSize(),
